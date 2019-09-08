@@ -7,8 +7,12 @@ deploy_prod:
     - whoami
     - npm i
     - npm run dev
-    - composer install
     - rsync -r * /var/www/nudge/parli/parli.nudge.tech --delete
+    - cp /var/www/nudge/parli/.env /var/www/nudge/parli/parli.nudge.tech
+    - cd /var/www/nudge/parli/parli.nudge.tech
+    - rm -Rf /var/www/nudge/parli/parli.nudge.tech/storage
+    - ln -sf /var/www/nudge/parli/storage /var/www/nudge/parli/parli.nudge.tech
+
   tags:
     - parli
   environment:
