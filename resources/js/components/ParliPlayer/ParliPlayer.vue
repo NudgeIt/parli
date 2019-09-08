@@ -132,3 +132,11 @@ export default {
   //   },
 };
 </script>
+
+<style scoped>
+.container {
+  padding: 1rem 2rem;
+  background: #fff;
+  opacity: 0.9;
+}
+</style>
