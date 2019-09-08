@@ -4,8 +4,6 @@
       <div class="col-md-8">
         <div class="card card-default">
           <div class="card-body">
-            totalTime: {{ totalTime }}<br />
-            currentTime: {{ currentTime }}
             <h2>
               EFF Woman vs ANC Women in Parliament
             </h2>
