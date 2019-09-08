@@ -1897,16 +1897,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       videoId: "w6511AHae_U",
       cost: 0,
-      nrSecondsTicked: 0,
       isRunning: false,
       interval: 1000,
       yearlyBudgetInRands: 5000000000,
-      clipLengthInSeconds: 21 * 60
+      clipLengthInSeconds: 21 * 60,
+      currentTime: 0,
+      totalTime: 0
     };
   },
   computed: {
@@ -1927,7 +1930,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     playing: function playing(event) {
       console.log("playing");
-      console.log(event);
+      this.totalTime = event.target.getDuration();
       this.startTimer(); // The player is playing a video.
     },
     change: function change(event) {
@@ -1975,24 +1978,10 @@ __webpack_require__.r(__webpack_exports__);
       this.isRunning = !this.isRunning;
     },
     incrementTime: function incrementTime() {
-      if (this.nrSecondsTicked >= this.clipLengthInSeconds) {
-        this.isRunning = false;
-      }
-
-      this.nrSecondsTicked = parseInt(this.nrSecondsTicked) + 1;
-      this.cost = this.cost + this.costPerSecond;
+      this.currentTime = this.player.getCurrentTime();
+      this.cost = this.currentTime * this.costPerSecond;
     }
-  } //   mounted() {
-  //     this.handleResize();
-  //     if (!this.disableParticles) {
-  //       CircleAnimation(this.$refs.canvas);
-  //     }
-  //     //    this.toggleTimer();
-  //   },
-  //   beforeDestroy() {
-  //     window.removeEventListener('resize', this.handleResize);
-  //   },
-
+  }
 });
 
 /***/ }),
@@ -20282,6 +20271,13 @@ var render = function() {
             "div",
             { staticClass: "card-body" },
             [
+              _vm._v("\n          totalTime: " + _vm._s(_vm.totalTime)),
+              _c("br"),
+              _vm._v(
+                "\n          currentTime: " +
+                  _vm._s(_vm.currentTime) +
+                  "\n          "
+              ),
               _c("h2", [
                 _vm._v(
                   "\n            EFF Woman vs ANC Women in Parliament\n          "

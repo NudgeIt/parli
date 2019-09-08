@@ -4,6 +4,8 @@
       <div class="col-md-8">
         <div class="card card-default">
           <div class="card-body">
+            totalTime: {{ totalTime }}<br />
+            currentTime: {{ currentTime }}
             <h2>
               EFF Woman vs ANC Women in Parliament
             </h2>
@@ -63,11 +65,12 @@ export default {
     return {
       videoId: "w6511AHae_U",
       cost: 0,
-      nrSecondsTicked: 0,
       isRunning: false,
       interval: 1000,
       yearlyBudgetInRands: 5000000000,
-      clipLengthInSeconds: 21 * 60
+      clipLengthInSeconds: 21 * 60,
+      currentTime: 0,
+      totalTime: 0
     };
   },
   computed: {
@@ -89,7 +92,7 @@ export default {
     },
     playing(event) {
       console.log("playing");
-      console.log(event);
+      this.totalTime = event.target.getDuration();
       this.startTimer();
       // The player is playing a video.
     },
@@ -137,24 +140,10 @@ export default {
       this.isRunning = !this.isRunning;
     },
     incrementTime() {
-      if (this.nrSecondsTicked >= this.clipLengthInSeconds) {
-        this.isRunning = false;
-      }
-      this.nrSecondsTicked = parseInt(this.nrSecondsTicked) + 1;
-      this.cost = this.cost + this.costPerSecond;
+      this.currentTime = this.player.getCurrentTime();
+      this.cost = this.currentTime * this.costPerSecond;
     }
   }
-  //   mounted() {
-  //     this.handleResize();
-
-  //     if (!this.disableParticles) {
-  //       CircleAnimation(this.$refs.canvas);
-  //     }
-  //     //    this.toggleTimer();
-  //   },
-  //   beforeDestroy() {
-  //     window.removeEventListener('resize', this.handleResize);
-  //   },
 };
 </script>
 
