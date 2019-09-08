@@ -1,7 +1,6 @@
 <template>
   <div :class="$style.stage" ref="stage">
     <canvas :class="$style.canvas" ref="canvas"></canvas>
-
     <vue-grid>
       <vue-grid-row>
         <vue-grid-item class="vueGridItem">
