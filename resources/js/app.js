@@ -25,6 +25,9 @@ Vue.use(VueAnalytics, {
     checkDuplicatedScript: true
 });
 
+import SocialSharing from "vue-social-sharing";
+Vue.use(SocialSharing);
+
 const app = new Vue({
     el: "#app"
 });

@@ -10,6 +10,8 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
     <!-- Styles -->
     <style>
         html,
@@ -20,12 +22,9 @@
             font-weight: 200;
             height: 100vh;
             margin: 0;
-            background: url('/images/building-min.jpg') center center;
+            background: #efefef;
         }
 
-        .full-height {
-            height: 100vh;
-        }
 
         .flex-center {
             align-items: center;
@@ -68,7 +67,7 @@
 </head>
 
 <body>
-    <div id="app" class="flex-center position-ref full-height">
+    <div id="app" class="flex-center position-ref">
         <div class="content">
             <parli-player></parli-player>
         </div>

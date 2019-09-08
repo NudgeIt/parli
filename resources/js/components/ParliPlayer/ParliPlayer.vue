@@ -4,10 +4,14 @@
       <div class="col-md-8">
         <div class="card card-default">
           <div class="card-body">
-            <h1>
+            <h2>
               EFF Woman vs ANC Women in Parliament
-            </h1>
-            <h2>Cost: R{{ formatPrice(cost) }}</h2>
+            </h2>
+            <h3 class="mb-0">Cost: R{{ formatPrice(cost) }}</h3>
+            <small v-if="!isRunning"
+              >Play the video to see how much this debate cost the SA
+              taxpayer.</small
+            >
 
             <youtube
               :video-id="videoId"
@@ -21,12 +25,32 @@
             ></youtube>
 
             <blockquote>
-              Parliament annual budget: R{{ formatPrice(yearlyBudgetInRands)
-              }}<br />
+              Parliament annual budget:
+              <strong>R{{ formatPrice(yearlyBudgetInRands) }}</strong
+              ><br />
               Cost per month: R{{ formatPrice(costPerMonth) }}<br />
               Cost per hour: R{{ formatPrice(costPerHour) }}<br />
               Cost per second: R{{ formatPrice(costPerSecond) }}<br />
             </blockquote>
+
+            Share using:<br />
+            <social-sharing
+              url="https://parli.nudge.tech/"
+              title="Debates in parliament and how much they cost"
+              description="Showing you how much a parliamentary debate costs in taxes, which is why it's so important that parliament, just like all other state institutions, function properly."
+              quote="The cost of debates in the South African parliament."
+              hashtags="saparliament"
+              inline-template
+            >
+              <div>
+                <network network="facebook">
+                  <i class="fa fa-facebook"></i> Facebook
+                </network>
+                <network network="whatsapp">
+                  <i class="fa fa-whatsapp"></i> Whatsapp
+                </network>
+              </div>
+            </social-sharing>
           </div>
         </div>
       </div>
@@ -65,6 +89,7 @@ export default {
     },
     playing(event) {
       console.log("playing");
+      console.log(event);
       this.startTimer();
       // The player is playing a video.
     },
@@ -134,6 +159,9 @@ export default {
 </script>
 
 <style scoped>
+.mb-0 {
+  margin-bottom: 0;
+}
 .container {
   padding: 1rem 2rem;
   background: #fff;
