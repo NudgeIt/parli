@@ -12,7 +12,7 @@
             <youtube
               :video-id="videoId"
               player-width="100%"
-              :player-vars="{ autoplay: 0 }"
+              :player-vars="{ autoplay: 1 }"
               @ready="ready"
               @playing="playing"
               @paused="paused"

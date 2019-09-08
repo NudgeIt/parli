@@ -19,6 +19,12 @@ Vue.component(
     require("./components/ParliPlayer/ParliPlayer.vue").default
 );
 
+import VueAnalytics from "vue-analytics";
+Vue.use(VueAnalytics, {
+    id: "UA-119145839-3",
+    checkDuplicatedScript: true
+});
+
 const app = new Vue({
     el: "#app"
 });
