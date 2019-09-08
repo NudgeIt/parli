@@ -1,0 +1,17 @@
+stages:
+  - deploy_prod
+
+deploy_prod:
+  stage: deploy_prod
+  script:
+    - whoami
+    - npm i
+    - npm run dev
+    - rsync -r * /var/www/nudge/parli/parli.nudge.tech --delete
+  tags:
+    - parli
+  environment:
+    name: production
+    url: https://parli.nudge.tech
+  only:
+    - master
