@@ -1869,6 +1869,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -19609,7 +19613,7 @@ var render = function() {
                 attrs: {
                   "video-id": _vm.videoId,
                   "player-width": "100%",
-                  "player-vars": { autoplay: 1 }
+                  "player-vars": { autoplay: 0 }
                 },
                 on: {
                   ready: _vm.ready,
@@ -19620,24 +19624,27 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _c("h2", [
+              _c("blockquote", [
                 _vm._v(
-                  "Cost per second: R" +
-                    _vm._s(_vm.formatPrice(_vm.costPerSecond))
-                )
-              ]),
-              _vm._v(" "),
-              _c("h4", [
+                  "\n            Parliament annual budget: R" +
+                    _vm._s(_vm.formatPrice(_vm.yearlyBudgetInRands))
+                ),
+                _c("br"),
                 _vm._v(
-                  "Cost per month: R" +
+                  "\n            Cost per month: R" +
                     _vm._s(_vm.formatPrice(_vm.costPerMonth))
-                )
-              ]),
-              _vm._v(" "),
-              _c("h4", [
+                ),
+                _c("br"),
                 _vm._v(
-                  "Cost per hour: R" + _vm._s(_vm.formatPrice(_vm.costPerHour))
-                )
+                  "\n            Cost per hour: R" +
+                    _vm._s(_vm.formatPrice(_vm.costPerHour))
+                ),
+                _c("br"),
+                _vm._v(
+                  "\n            Cost per second: R" +
+                    _vm._s(_vm.formatPrice(_vm.costPerSecond))
+                ),
+                _c("br")
               ])
             ],
             1

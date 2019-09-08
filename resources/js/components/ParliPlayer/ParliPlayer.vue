@@ -12,7 +12,7 @@
             <youtube
               :video-id="videoId"
               player-width="100%"
-              :player-vars="{ autoplay: 1 }"
+              :player-vars="{ autoplay: 0 }"
               @ready="ready"
               @playing="playing"
               @paused="paused"
@@ -20,9 +20,13 @@
               @stop="stop"
             ></youtube>
 
-            <h2>Cost per second: R{{ formatPrice(costPerSecond) }}</h2>
-            <h4>Cost per month: R{{ formatPrice(costPerMonth) }}</h4>
-            <h4>Cost per hour: R{{ formatPrice(costPerHour) }}</h4>
+            <blockquote>
+              Parliament annual budget: R{{ formatPrice(yearlyBudgetInRands)
+              }}<br />
+              Cost per month: R{{ formatPrice(costPerMonth) }}<br />
+              Cost per hour: R{{ formatPrice(costPerHour) }}<br />
+              Cost per second: R{{ formatPrice(costPerSecond) }}<br />
+            </blockquote>
           </div>
         </div>
       </div>
