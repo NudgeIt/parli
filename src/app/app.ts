@@ -14,6 +14,9 @@ import './shared/directives';
 
 Vue.use(VeeValidate, { inject: false, delay: 1 });
 
+import VueYouTubeEmbed from 'vue-youtube-embed';
+Vue.use(VueYouTubeEmbed);
+
 export interface IApp {
   app: Vue;
   router: VueRouter;

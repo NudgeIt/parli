@@ -1,7 +1,8 @@
 <template>
   <div>
     <stage :disable-particles="disableParticles" />
-    <home-section
+
+    <!-- <home-section
       image="https://images.unsplash.com/photo-1549082984-1323b94df9a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=512&q=60"
       alternative
     >
@@ -101,7 +102,7 @@
         <li>Install dependencies: <code>npm install</code></li>
         <li>Run <code>npm run dev</code></li>
       </ol>
-    </home-section>
+    </home-section> -->
   </div>
 </template>
 

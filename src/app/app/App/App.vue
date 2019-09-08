@@ -1,10 +1,10 @@
 <template>
   <div id="app" :class="$style.app">
-    <vue-notification-stack />
+    <!-- <vue-notification-stack /> -->
 
-    <vue-navigation-progress :is-navigating="isNavigating" />
+    <!-- <vue-navigation-progress :is-navigating="isNavigating" /> -->
 
-    <vue-nav-bar>
+    <!-- <vue-nav-bar>
       <router-link slot="middle" to="/">
         <vue-icon-vuesion :class="$style.logo" />
       </router-link>
@@ -16,11 +16,11 @@
       <vue-button slot="right" v-if="isAuthenticated" color="primary" @click="onLogout">
         Logout
       </vue-button>
-    </vue-nav-bar>
+    </vue-nav-bar> -->
 
     <router-view :class="$style.content" />
 
-    <vue-footer />
+    <!-- <vue-footer />
 
     <vue-cookie-consent
       current-version="1.0.0"
@@ -30,8 +30,8 @@
       This is a cookie consent component which shows the cookie consent every time you change the version of the
       consent.
     </vue-cookie-consent>
-
-    <vue-sidebar>
+ -->
+    <!-- <vue-sidebar>
       <vue-sidebar-group title="Languages">
         <vue-sidebar-group-item>
           <vue-select name="lang" id="lang" :options="languages" @input="localeSwitch" :value="getLocale" />
@@ -106,7 +106,7 @@
         </vue-sidebar-group-item>
       </vue-sidebar-group>
     </vue-sidebar>
-
+ -->
     <vue-modal :show="showLoginModal" @close="showLoginModal = false">
       <login-form :loading="isLoginPending" @submit="onLoginSubmit" />
     </vue-modal>
