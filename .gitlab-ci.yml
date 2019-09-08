@@ -12,7 +12,7 @@ deploy_prod:
     - cd /var/www/nudge/parli/parli.nudge.tech
     - rm -Rf /var/www/nudge/parli/parli.nudge.tech/storage
     - ln -sf /var/www/nudge/parli/storage /var/www/nudge/parli/parli.nudge.tech
-
+    - composer clear-all
   tags:
     - parli
   environment:
