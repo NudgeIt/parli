@@ -79,7 +79,7 @@ export default {
       return this.yearlyBudgetInRands / 365 / 24;
     },
     costPerSecond() {
-      return this.yearlyBudgetInRands / 365 / 24 / 60;
+      return this.yearlyBudgetInRands / 365 / 24 / 60 / 60;
     }
   },
   methods: {
