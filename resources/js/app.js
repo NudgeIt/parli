@@ -19,12 +19,6 @@ Vue.component(
     require("./components/ParliPlayer/ParliPlayer.vue").default
 );
 
-import VueAnalytics from "vue-analytics";
-Vue.use(VueAnalytics, {
-    id: "UA-119145839-3",
-    checkDuplicatedScript: true
-});
-
 import SocialSharing from "vue-social-sharing";
 Vue.use(SocialSharing);
 
