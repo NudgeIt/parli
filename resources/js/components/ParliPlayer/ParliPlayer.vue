@@ -6,9 +6,9 @@
           <div class="card-body">
             <h2>Entertaining? <small>Think again.</small></h2>
             <h3 class="mb-0">Cost: R{{ formatPrice(cost) }}</h3>
-            <span v-if="!isRunning"
+            <small v-if="!isRunning"
               >Play the video to see how much this<br />
-              debate cost the SA taxpayer.</span
+              debate cost the SA taxpayer.</small
             >
 
             <youtube
@@ -65,7 +65,7 @@
 export default {
   data() {
     return {
-      videoId: "jwO6DH5JiXU",
+      videoId: "MmpL31TaSxA",
       cost: 0,
       isRunning: false,
       interval: 1000,

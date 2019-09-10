@@ -1904,7 +1904,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      videoId: "jwO6DH5JiXU",
+      videoId: "MmpL31TaSxA",
       cost: 0,
       isRunning: false,
       interval: 1000,
@@ -20269,7 +20269,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               !_vm.isRunning
-                ? _c("span", [
+                ? _c("small", [
                     _vm._v("Play the video to see how much this"),
                     _c("br"),
                     _vm._v("\n            debate cost the SA taxpayer.")
