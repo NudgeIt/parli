@@ -4,9 +4,7 @@
       <div class="col-md-8">
         <div class="card card-default">
           <div class="card-body">
-            <h2>
-              EFF Woman vs ANC Women in Parliament
-            </h2>
+            <h2>Entertaining? <small>Think again.</small></h2>
             <h3 class="mb-0">Cost: R{{ formatPrice(cost) }}</h3>
             <small v-if="!isRunning"
               >Play the video to see how much this debate cost the SA
@@ -15,7 +13,8 @@
 
             <youtube
               :video-id="videoId"
-              player-width="100%"
+              player-width="320"
+              player-height="180"
               :player-vars="{ autoplay: 1 }"
               @ready="ready"
               @playing="playing"
@@ -25,32 +24,37 @@
             ></youtube>
 
             <blockquote>
-              Parliament annual budget:
+              <h3>South Africa - Parliament</h3>
+              Annual budget:
               <strong>R{{ formatPrice(yearlyBudgetInRands) }}</strong
               ><br />
-              Cost per month: R{{ formatPrice(costPerMonth) }}<br />
-              Cost per hour: R{{ formatPrice(costPerHour) }}<br />
-              Cost per second: R{{ formatPrice(costPerSecond) }}<br />
+              Month: R{{ formatPrice(costPerMonth) }}<br />
+              Hourly: R{{ formatPrice(costPerHour) }}<br />
+              Second: R{{ formatPrice(costPerSecond) }}<br />
             </blockquote>
 
-            Share using:<br />
-            <social-sharing
-              url="https://parli.nudge.tech/"
-              title="Debates in parliament and how much they cost"
-              description="Showing you how much a parliamentary debate costs in taxes, which is why it's so important that parliament, just like all other state institutions, function properly."
-              quote="The cost of debates in the South African parliament."
-              hashtags="saparliament"
-              inline-template
-            >
-              <div>
-                <network network="facebook">
-                  <i class="fa fa-facebook"></i> Facebook
-                </network>
-                <network network="whatsapp">
-                  <i class="fa fa-whatsapp"></i> Whatsapp
-                </network>
-              </div>
-            </social-sharing>
+            <div style="border-top: 1px solid #ececec; padding-top: 1rem;">
+              Share using:<br />
+              <social-sharing
+                url="https://parli.nudge.tech/"
+                title="Debates in parliament and how much they cost"
+                description="Showing you how much a parliamentary debate costs in taxes, which is why it's so important that parliament, just like all other state institutions, function properly."
+                quote="The cost of debates in the South African parliament."
+                hashtags="saparliament"
+                inline-template
+              >
+                <div>
+                  <network network="facebook">
+                    <i class="fa fa-facebook" style="color: #3b5998;"></i>
+                    Facebook
+                  </network>
+                  <network network="whatsapp">
+                    <i class="fa fa-whatsapp" style="color: #00bfa5;"></i>
+                    Whatsapp
+                  </network>
+                </div>
+              </social-sharing>
+            </div>
           </div>
         </div>
       </div>
@@ -61,7 +65,7 @@
 export default {
   data() {
     return {
-      videoId: "w6511AHae_U",
+      videoId: "jwO6DH5JiXU",
       cost: 0,
       isRunning: false,
       interval: 1000,
@@ -117,8 +121,8 @@ export default {
       this.stopTimer();
     },
     formatPrice(value) {
-      let val = (value / 1).toFixed(2).replace(".", ",");
-      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      let val = (value / 1).toFixed(0).replace(".", ",");
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     },
     startTimer() {
       this.interval = setInterval(this.incrementTime, 1000);
@@ -150,7 +154,7 @@ export default {
   margin-bottom: 0;
 }
 .container {
-  padding: 1rem 2rem;
+  padding: 1rem 0rem;
   background: #fff;
   opacity: 0.9;
 }
