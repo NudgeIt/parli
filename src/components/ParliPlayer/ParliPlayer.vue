@@ -35,25 +35,11 @@
 
             <div style="border-top: 1px solid #ececec; padding-top: 1rem">
               Share using:<br />
-              <social-sharing
-                url="https://parli.nudge.tech/"
-                title="Debates in parliament and how much they cost"
-                description="Showing you how much a parliamentary debate costs in taxes, which is why it's so important that parliament, just like all other state institutions, function properly."
-                quote="The cost of debates in the South African parliament."
-                hashtags="saparliament"
-                inline-template
-              >
-                <div>
-                  <network network="facebook">
-                    <i class="fa fa-facebook" style="color: #3b5998"></i>
-                    Facebook
-                  </network>
-                  <network network="whatsapp">
-                    <i class="fa fa-whatsapp" style="color: #00bfa5"></i>
-                    Whatsapp
-                  </network>
-                </div>
-              </social-sharing>
+              <a href="#" @click="whatsappShare">
+                <img
+                  src="https://img.icons8.com/color/48/000000/whatsapp.png"
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -87,6 +73,11 @@ export default {
     },
   },
   methods: {
+    whatsappShare() {
+      let currentUrl = window.location.href;
+      let url = `https://api.whatsapp.com/send?text=How politicians in SA are wasting your money. ${currentUrl}`;
+      window.open(url, "_blank");
+    },
     ready(event) {
       console.log("ready");
       this.player = event.target;

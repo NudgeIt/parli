@@ -23,9 +23,6 @@ Vue.component(
   require("./components/ParliPlayer/ParliPlayer.vue").default
 );
 
-import SocialSharing from "vue-social-sharing";
-Vue.use(SocialSharing);
-
 new Vue({
   router,
   store,
